@@ -4,6 +4,9 @@ django-qimg
 Installation
 ------------
 
+*REQUIRES*
+  PIL : Python Imaging Library
+
     clone http://github.com/issackelly/django-qimg
     cd django-qimg
     python setup.py install
