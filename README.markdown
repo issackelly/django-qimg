@@ -46,6 +46,6 @@ That's it!
 Shoutout
 --------
 Original view based on this blog post by Brad Montgomery:
-[http://bradmontgomery.blogspot.com/2008/07/django-generating-image-with-pil.html]
+<http://bradmontgomery.blogspot.com/2008/07/django-generating-image-with-pil.html>
     
     
