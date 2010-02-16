@@ -2,7 +2,7 @@
 from django.http import HttpResponse, Http404
 from django.conf import settings
 
-def qimg(request, width=150, height=150):
+def qimg(request, width=150, height=150, rtext = None):
     """"
     A View that Returns a PNG Image generated using PIL, arbitrary widht and height
     Fits the width and height into the center of the image
@@ -21,9 +21,12 @@ def qimg(request, width=150, height=150):
     im = Image.new('RGB', size) # create the image
     draw = ImageDraw.Draw(im)   # create a drawing object that is
     draw.rectangle([0,0,int(width),int(height)],fill=grey)
-                               # used to draw on the new image
-      # color of our text
-    text = width + 'x' + height # text to draw
+    
+    if not rtext:
+        text = width + 'x' + height # text to draw
+    else:
+        text = rtext
+    
     # Now, we'll do the drawing: 
     font = ImageFont.truetype(settings.QIMG_FONT, default_size)
     size = font.getsize(text)

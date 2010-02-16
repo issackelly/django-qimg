@@ -8,7 +8,7 @@ README = read('README.markdown')
  
 setup(
     name = "django-qimg",
-    version = "0.5.1",
+    version = "0.6",
     url = 'http://github.com/issackelly/django-qimg',
     license = 'MIT',
     description = "Dynamically Create Images of any size for quick wireframes",

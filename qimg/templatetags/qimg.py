@@ -8,7 +8,8 @@ class QImgNode(template.Node):
     """
     argv = dict({
         'url': '/qimg/',
-        'class': 'qimg'
+        'class': 'qimg',
+        'text': None
     })
     def __init__(self, argv = dict({})):
         self.argv.update(argv)
@@ -18,7 +19,7 @@ class QImgNode(template.Node):
         Renders tag to markup
         """
         return u'<img src="%(url)s" width="%(width)s" height="%(height)s" class="%(class)s"/>' % \
-          {'url': reverse('qimg.views.qimg', args=(self.argv['width'], self.argv['height'])), 
+          {'url': reverse('qimg_text', kwargs=(dict({'width':self.argv['width'], 'height':self.argv['height'], 'rtext':self.argv['text']}))), 
           'width': self.argv['width'],
           'height': self.argv['height'],
           'class': self.argv['class']
