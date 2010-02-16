@@ -25,7 +25,6 @@ def qimg(request, width=150, height=150):
       # color of our text
     text = width + 'x' + height # text to draw
     # Now, we'll do the drawing: 
-    print settings.QIMG_FONT
     font = ImageFont.truetype(settings.QIMG_FONT, default_size)
     size = font.getsize(text)
     font_size = default_size * 0.7
