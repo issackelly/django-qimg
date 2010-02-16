@@ -29,17 +29,20 @@ Usage
 direct via url:
 
     GET /qimg/250x150
-    
-The above outputs a png, 250 wide by 150 tall
+    # The above outputs a png, 250 wide by 150 tall
+    GET /qimg/125x125/adblock
+    # outputs a 125x125 block with 'adblock' as the text, not '125x125' which is the default
     
 in your template:
 
     {% load qimg %}
     {% qimg 350x224 class=someclass %}
+    {% qimg 125x125 class=advert "text=Your Ad Here" %}
     
 outputs
 
-    <img src="/qimg/350x224" width="350" height="224" class="someclass" />
+    <img src="/qimg/350x224" width="350" height="224" class="someclass" /> and
+    <img src="/qimg/125x125/Your Ad Here" width="125" height="125" class="advert" />
     
 That's it!
 
