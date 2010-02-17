@@ -36,13 +36,12 @@ direct via url:
 in your template:
 
     {% load qimg %}
-    {% qimg 350x224 class=someclass %}
-    {% qimg 125x125 class=advert "text=Your Ad Here" %}
+    {% qimg [dimens] [class] [text] %}
     
-outputs
+    # dimens: string '125x125' default 150x150 (with quotes, or a string obj)
+    # class: string 'someclass' default qimg
+    # text: string '125x125' default <dimens>
 
-    <img src="/qimg/350x224" width="350" height="224" class="someclass" /> and
-    <img src="/qimg/125x125/Your Ad Here" width="125" height="125" class="advert" />
     
 That's it!
 
@@ -51,6 +50,6 @@ Shoutout
 Original view based on this blog post by Brad Montgomery:
 <http://bradmontgomery.blogspot.com/2008/07/django-generating-image-with-pil.html>
 
-Thanks to j00bar for patiently helping me move from php to django
+Thanks to j00bar for patiently helping me move from php to django on irc
     
     

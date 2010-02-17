@@ -30,19 +30,17 @@ def qimg(request, width=150, height=150, rtext = None):
     # Now, we'll do the drawing: 
     font = ImageFont.truetype(settings.QIMG_FONT, default_size)
     size = font.getsize(text)
-    font_size = default_size * 0.7
+    font_size = int(default_size * 0.7)
     while (size[0]+15) > int(width):
         font = ImageFont.truetype(settings.QIMG_FONT, font_size)
-        font_size = font_size * 0.7
+        font_size = int(font_size * 0.7)
         size = font.getsize(text)
     while (size[1]+15) > int(height):
         font = ImageFont.truetype(settings.QIMG_FONT, font_size)
-        font_size = font_size * 0.7
+        font_size = int(font_size * 0.7)
         size = font.getsize(text)
     
     text_pos = (((int(width)/2)-(size[0]/2)),(int(height)/2-size[1]*3/8)) # top-left position of our text, centered, 3/8 because of the line-height of the font
-    
-    print text_pos
     draw.text(text_pos, text, fill=white, font=font)
     del draw # I'm done drawing so I don't need this anymore
 
