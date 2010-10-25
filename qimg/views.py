@@ -11,7 +11,7 @@ def qimg(request, width=150, height=150, rtext = None):
     http://bradmontgomery.blogspot.com/2008/07/django-generating-image-with-pil.html    
     """
 
-    import Image, ImageFont, ImageDraw 
+    from PIL import Image, ImageFont, ImageDraw 
     red = (255,0,0) 
     grey = (204,204,204) 
     white = (255,255,255) 
